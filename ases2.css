@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.outform{
+    background-color: black;
+    height: 105vh;
+    width: 100vw;
+    background: url('styleblackbng.jpg');
+    background-size: cover;
+}
+
+.center{
+    color: white;
+    padding-left: 20vw;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 900;
+}
+
+button{
+    margin-left: 6.6vw;
+    background-color: lightgray;
+    border-radius: 45%;
+    width: 8vw;
+    height: 4vh;
+    font-weight: bolder;
+}
+
+.padtop{
+    margin-top: 6vh;
+}
+
+.gender{
+    margin-top: 6vh;
+}
+
+.radiobtn{
+    margin-left: 3vw;
+}
+
+
+
+.fstrow{
+    margin-top: 17vh;
+}
+
+/* For rearranging input fields */
+
+.pass{
+    margin-left: 7.06%;
+}
+
+.uname{
+    margin-left: 6.67%;
+}
+
+.pnum{
+    margin-left: 3.7%;
+}
+
+.mail{
+    margin-left: 7.75%;
+}
+
+.dofb{
+    margin-left: 4.6%;
+}
+
+.fullname{
+    margin-left: 6.4%;
+}
+
+.cpass{
+    margin-left: 2%;
+}

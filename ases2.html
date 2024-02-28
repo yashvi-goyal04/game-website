@@ -1,0 +1,144 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ases2.css">
+    <script>
+        function validateForm() {
+            listOfElem = ["fstname", "dob", "oneselect", "email", "phone", "user", "passw", "cpassw"];
+            for (let i = 0; i < listOfElem.length; i++) {
+                let x = document.forms["myForm"][listOfElem[i]].value;
+                if (x == "") {
+                    alert("Fill out all the fields");
+                    return false;
+                }
+            }
+            return checkFname() && checkEmail() && checkPhone() && checkPass() && checkUsername() && checkConfirmPassword() && checkDOBFormat();
+        }
+
+        function checkDOBFormat() {
+            let dob = document.forms["myForm"]["dob"].value;
+            let dobPattern = /^\d{2}\/\d{2}\/\d{4}$/;
+            if (!dobPattern.test(dob)) {
+                alert("Date of Birth must be in the format dd/mm/yyyy");
+                return false;
+            }
+            return true;
+        }
+
+        function checkFname() {
+            let specialChars = /[^\w\s]/;
+            let fullName = document.forms["myForm"]["fstname"].value;
+            if (specialChars.test(fullName)) {
+                alert("Name cannot have numbers and special characters")
+                return false;
+            }
+            return true;
+        }
+
+        function checkEmail() {
+            let email = document.forms["myForm"]["email"].value;
+            if (email.length > 50) {
+                alert("Email length cannot exceed 50 characters");
+                return false;
+            }
+            if (!email.includes('@') || !email.includes('.')) {
+                alert("Email should contain '@' and '.' (dot)");
+                return false;
+            }
+            return true;
+        }
+
+        function checkPhone() {
+            let phonenumber = document.forms["myForm"]["phone"].value;
+            let phonereg = /^[6-9]\d{9}$/;
+            if (phonenumber.length !== 10) {
+                alert("Length of Phone number must be 10");
+                return false;
+            }
+            if (!phonereg.test(phonenumber)) {
+                alert("Invalid phone number");
+                return false;
+            }
+            return true;
+        }
+
+        function checkPass() {
+            let password = document.forms["myForm"]["passw"].value;
+            if (password.length < 10) {
+                alert("Password must be at least 10 characters long");
+                return false;
+            }
+            if (!/[A-Z]/.test(password)) {
+                alert("Password must contain at least one capital letter");
+                return false;
+            }
+            if (!/[a-z]/.test(password)) {
+                alert("Password must contain at least one small letter");
+                return false;
+            }
+            let specialCharCount = (password.match(/[^\w\s]/g) || []).length;
+            if (specialCharCount < 2) {
+                alert("Password must contain at least two special characters");
+                return false;
+            }
+            return true;
+        }
+
+        function checkUsername() {
+            let username = document.forms["myForm"]["user"].value;
+            if (username.length >= 15) {
+                alert("Username must be less than 15 characters");
+                return false;
+            }
+            if (!/^[a-zA-Z0-9]+$/.test(username)) {
+                alert("Username must contain only letters and numbers");
+                return false;
+            }
+            return true;
+        }
+
+        function checkConfirmPassword() {
+            let password = document.forms["myForm"]["passw"].value;
+            let confirmPassword = document.forms["myForm"]["cpassw"].value;
+            if (password !== confirmPassword) {
+                alert("Password and Confirm Password do not match");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+   
+    <form class="outform" name="myForm" onsubmit=" validateForm()">
+        
+        <div class="center">
+        
+        Full Name: <input type="text" name="fstname" class="fullname padtop fstrow" ><br>
+        
+        Date Of Birth: <input type="text" name="dob" class="dofb padtop"><br>
+        
+        <div class="gender">
+        Gender: <input type="radio" name="oneselect" class="radiobtn" >Male
+        <input type="radio" name="oneselect" class="radiobtn" >Female
+        <input type="radio" name="oneselect" class="radiobtn" >Other<br></div>
+
+        Email id: <input type="text" name="email" class="mail padtop"><br>
+       
+        Phone Number: <input type="text" name="phone" class="pnum padtop"><br>
+        
+        Username: <input type="text" name="user" class="uname padtop"><br>
+        Password: <input type="text" name="passw" class="pass padtop"><br>
+        
+        Confirm password: <input type="text " name="cpassw" class="cpass padtop"><br>
+        <button type="submit" class="padtop" >Submit</button>
+    </div>
+
+    </form>
+
+
+
+</body>
+</html>

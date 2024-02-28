@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Website</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="games.html">Games</a></li>
+        <li><a href="ases2.html">Contact Us</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="chatbot.html">Chatbot</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="content">
+    <h1>Welcome to our Game Website!</h1>
+    <p>Select a game from the list below:</p>
+    <ul class="games-list">
+      <li><a href="connect4.html">Connect 4</a></li>
+      <li><a href="tictactoe.html">Tic Tac Toe</a></li>
+      <li><a href="rockps.html">Rock, Paper, Scissors</a></li>
+    </ul>
+  </section>
+  <footer>
+    <p>&copy; 2023 Game Website</p>
+  </footer>
+  <script src="home.js"></script>
+</body>
+</html>
+
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  transition: background-color 0.5s;
+}
+
+header {
+  background-color: #333;
+  padding: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.content {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.games-list {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.games-list li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.games-list li a {
+  padding: 5px 15px;
+  background-color: #ccc;
+  color: #333;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.5s;
+}
+
+.games-list li a:hover {
+  background-color: #333;
+  color: white;
+}
+
+footer {
+  background-color: #333;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  margin-top: 50px;
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+body {
+  animation: fade-in 1s ease-out;
+}
+</style>
